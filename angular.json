@@ -54,7 +54,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "/",
+              "baseHref": "/whopaid/",
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json",
               "budgets": [

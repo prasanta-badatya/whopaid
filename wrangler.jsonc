@@ -1,11 +1,20 @@
-// Cloudflare Workers config: serve the built Angular app as static assets.
+// Cloudflare Workers config: serve the built Angular app at allvo.in/whopaid/.
+// worker/index.js strips the /whopaid prefix and looks requests up in ASSETS.
 // GitHub Pages deploys use `npm run deploy` instead and ignore this file.
 {
   "name": "whopaid",
+  "main": "worker/index.js",
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "./dist/split-karo",
-    // Serve index.html for unknown paths so deep links (e.g. /trip/123) load the app
-    "not_found_handling": "single-page-application"
-  }
+    "binding": "ASSETS",
+    // Serve index.html for unknown paths so deep links (e.g. /whopaid/trip/123) load the app
+    "not_found_handling": "single-page-application",
+    // Every request goes through the Worker so the prefix can be stripped first
+    "run_worker_first": true
+  },
+  "routes": [
+    { "pattern": "allvo.in/whopaid*", "zone_name": "allvo.in" },
+    { "pattern": "allvo.in/who-paid*", "zone_name": "allvo.in" }
+  ]
 }
