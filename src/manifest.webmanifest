@@ -2,13 +2,13 @@
   "name": "WhoPaid",
   "short_name": "WhoPaid",
   "description": "Split any shared expense — trips, rent, dinners, or group outings. Equal, exact, or day-wise, with UPI settle-up.",
-  "start_url": "/whopaid/",
+  "start_url": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#f8fafc",
   "theme_color": "#6366f1",
   "lang": "en-IN",
-  "scope": "/whopaid/",
+  "scope": "./",
   "categories": ["finance", "utilities", "lifestyle"],
   "icons": [
     {

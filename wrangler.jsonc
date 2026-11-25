@@ -1,0 +1,11 @@
+// Cloudflare Workers config: serve the built Angular app as static assets.
+// GitHub Pages deploys use `npm run deploy` instead and ignore this file.
+{
+  "name": "whopaid",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist/split-karo",
+    // Serve index.html for unknown paths so deep links (e.g. /trip/123) load the app
+    "not_found_handling": "single-page-application"
+  }
+}
